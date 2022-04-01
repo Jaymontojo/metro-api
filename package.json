@@ -1,0 +1,29 @@
+{
+  "name": "metro-api",
+  "version": "1.0.0",
+  "description": "an api for Train stations within the tokyo metropolitan 23 special wards",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "release": "standard-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaymontojo/metro-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaymontojo/metro-api/issues"
+  },
+  "homepage": "https://github.com/Jaymontojo/metro-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "standard-version": "^9.3.2"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

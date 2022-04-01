@@ -1,4 +1,7 @@
-module.exports = {
+const knex = require('knex');
+require('dotenv').config();
+
+const config = {
   client: "pg",
   connection:
     process.env.DATABASE_URL ||
@@ -12,3 +15,6 @@ module.exports = {
     directory: __dirname + '/db/seeds'
   }
 };
+
+const db = knex(config);
+module.exports = { db }

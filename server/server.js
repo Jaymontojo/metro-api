@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("knex")("../db/knexfile");
+const db = require('../knexfile');
 
 const setupExpressServer = () => {
   const app = express();
@@ -12,4 +12,4 @@ const setupExpressServer = () => {
   return app;
 };
 
-module.exports = { setupExpressServer };
+module.exports = { setupExpressServer , db};

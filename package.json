@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "nodemon server/index.js",
     "release": "standard-version",
+    "make:migration": "knex migrate:make",
+    "migrate": "knex migrate:latest",
+    "make:seed": "knex seed:make",
+    "seed": "knex seed:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +24,13 @@
   },
   "homepage": "https://github.com/Jaymontojo/metro-api#readme",
   "devDependencies": {
+    "dotenv": "^16.0.0",
     "nodemon": "^2.0.15",
     "standard-version": "^9.3.2"
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "knex": "^1.0.4",
+    "pg": "^8.7.3"
   }
 }

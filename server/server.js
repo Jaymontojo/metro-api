@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require('../knexfile');
+const db = require("../db/knex");
 
 const setupExpressServer = () => {
   const app = express();
@@ -7,6 +7,10 @@ const setupExpressServer = () => {
 
   app.get("/", (req, res) => {
     res.send("Hello World").status(200);
+  });
+  app.get("/companies", async (req, res) => {
+    const response = await db.select('*').from('companies')
+    res.send(response).status(200);
   });
 
   return app;

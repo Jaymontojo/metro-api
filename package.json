@@ -29,7 +29,9 @@
     "standard-version": "^9.3.2"
   },
   "dependencies": {
+    "apollo-server": "^3.6.7",
     "express": "^4.17.3",
+    "graphql": "^16.3.0",
     "knex": "^1.0.4",
     "pg": "^8.7.3"
   }

@@ -10,5 +10,16 @@ const typeDefs = gql`
     Companies: [Company]
     Company(name: String): Company
   }
+
+  input CompanyInput {
+    id: Int
+    name_en: String
+  }
+
+  type Mutation {
+    createCompany(input: CompanyInput): String
+    updateCompany(name: String! edit: CompanyInput): String
+    deleteCompany(name: String): String
+  }
 `
 module.exports= typeDefs

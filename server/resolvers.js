@@ -14,12 +14,16 @@ module.exports = {
     },
 
     Company: async (parent, args) => {
-      const company = await db('companies')
-        .select('*')
-        .where('name_en', args.name)
-        .timeout(1500);
-      console.log(company)
-      return company[0];
+      try{
+        const company = await db('companies')
+          .select('*')
+          .where('name_en', args.name)
+          .timeout(1500);
+        console.log(company)
+        return company[0];
+      }catch(err) {
+        return err
+      }
     }
   },
   Mutation: {

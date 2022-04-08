@@ -21,11 +21,12 @@ module.exports = {
           .timeout(1500);
         console.log(company)
         return company[0];
-      }catch(err) {
+      } catch(err) {
         return err
       }
     }
   },
+  
   Mutation: {
     createCompany: async(parent, args) =>{
       try {
@@ -37,9 +38,18 @@ module.exports = {
         return err;
       }
     },
-    updateCompany: async(parent, args) =>{
 
+    updateCompany: async(parent, args) =>{
+      try{
+        await db('companies')
+          .where("name_en", args.name)
+          .update("name_en", args.edit.name_en)
+        return 'Successfully Updated!'
+      } catch(err) {
+        return err
+      }
     },
+
     deleteCompany: async(parent, args) =>{
 
     }

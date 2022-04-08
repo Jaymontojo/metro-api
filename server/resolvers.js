@@ -15,12 +15,11 @@ module.exports = {
 
     Company: async (parent, args) => {
       try{
-        const company = await db('companies')
+        const companies = await db('companies')
           .select('*')
           .where('name_en', args.name)
           .timeout(1500);
-        console.log(company)
-        return company[0];
+        return companies[0];
       } catch(err) {
         return err
       };
@@ -31,12 +30,23 @@ module.exports = {
         const lines = await db('lines')
           .select('*')
           .timeout(1500);
-        console.log(lines)
         return lines;
       } catch(err) {
         return err
-      }
-    }
+      };
+    },
+
+    Line: async (parent, args) => {
+      try{
+        const lines = await db('lines')
+          .select('*')
+          .where('name_en', args.name)
+          .timeout(1500);
+        return lines[0];
+      } catch(err) {
+        return err
+      };
+    },
   },
 
   Mutation: {

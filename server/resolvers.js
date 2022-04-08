@@ -10,7 +10,7 @@ module.exports = {
         return companies;
       } catch(err) {
         return err
-      }
+      };
     },
 
     Company: async (parent, args) => {
@@ -21,6 +21,17 @@ module.exports = {
           .timeout(1500);
         console.log(company)
         return company[0];
+      } catch(err) {
+        return err
+      };
+    },
+
+    Lines: async (parent, args) => {
+      try{
+        const lines = await db('lines')
+          .select('*')
+          .timeout(1500);
+        return lines[0];
       } catch(err) {
         return err
       }
@@ -58,7 +69,7 @@ module.exports = {
           return 'Successfully Deleted!'
       } catch(err) {
         return err
-      }
-    }
-  }
-}
+      };
+    },
+  },
+};

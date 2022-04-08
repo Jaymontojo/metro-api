@@ -9,6 +9,7 @@ const typeDefs = gql`
   type Line {
     id: Int
     name_en: String!
+    operator_id: Int!
   }
 
   type Query {
@@ -20,12 +21,13 @@ const typeDefs = gql`
 
   input CompanyInput {
     id: Int
-    name_en: String
+    name_en: String!
   }
 
   input LineInput {
     id: Int
-    name_en: String
+    name_en: String!
+    operator_id: Int!
   }
 
   type Mutation {

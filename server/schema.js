@@ -8,6 +8,7 @@ const typeDefs = gql`
 
   type Query {
     Companies: [Company]
+    Company(name: String): Company
   }
 `
 module.exports= typeDefs

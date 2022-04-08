@@ -26,7 +26,7 @@ module.exports = {
       }
     }
   },
-  
+
   Mutation: {
     createCompany: async(parent, args) =>{
       try {
@@ -51,7 +51,14 @@ module.exports = {
     },
 
     deleteCompany: async(parent, args) =>{
-
+      try{
+        await db('companies')
+          .where('name_en', args.name)
+          .del();
+          return 'Successfully Deleted!'
+      } catch(err) {
+        return err
+      }
     }
   }
 }

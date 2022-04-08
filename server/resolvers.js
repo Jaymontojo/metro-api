@@ -31,7 +31,8 @@ module.exports = {
         const lines = await db('lines')
           .select('*')
           .timeout(1500);
-        return lines[0];
+        console.log(lines)
+        return lines;
       } catch(err) {
         return err
       }
@@ -47,7 +48,7 @@ module.exports = {
         return "Successfully Created!";
       } catch(err){
         return err;
-      }
+      };
     },
 
     updateCompany: async(parent, args) =>{
@@ -58,7 +59,7 @@ module.exports = {
         return 'Successfully Updated!'
       } catch(err) {
         return err
-      }
+      };
     },
 
     deleteCompany: async(parent, args) =>{
@@ -69,6 +70,17 @@ module.exports = {
           return 'Successfully Deleted!'
       } catch(err) {
         return err
+      };
+    },
+
+    createLine: async(parent, args) =>{
+      try {
+        await db('lines')
+          .insert(args.input)
+          .timeout(1500);
+        return "Successfully Created!";
+      } catch(err){
+        return err;
       };
     },
   },

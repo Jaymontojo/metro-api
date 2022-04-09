@@ -13,11 +13,11 @@ class LineModel {
     };
   };
 
-  async getLine(operatorNameEN){
+  async getLine(lineNameEN){
     try{
       const lines = await this.db('lines')
         .select('*')
-        .where('name_en', operatorNameEN)
+        .where('name_en', lineNameEN)
         .timeout(1500);
       return lines[0];
     } catch(err) {
@@ -36,8 +36,15 @@ class LineModel {
     };
   };
 
-  async updateLine(){
-
+  async updateLine(lineNameEN, edit){
+    try{
+      await this.db('lines')
+        .where("name_en", lineNameEN)
+        .update("name_en", edit.name_en)
+      return 'Successfully Updated!'
+    } catch(err) {
+      return err
+    };
   };
 
   async deleteLine(){

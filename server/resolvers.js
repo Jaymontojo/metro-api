@@ -38,14 +38,7 @@ module.exports = {
     },
 
     updateLine: async(parent, args) =>{
-      try{
-        await db('lines')
-          .where("name_en", args.name)
-          .update("name_en", args.edit.name_en)
-        return 'Successfully Updated!'
-      } catch(err) {
-        return err
-      };
+      return Line.updateLine(args.name_en, args.edit);
     },
   },
 };

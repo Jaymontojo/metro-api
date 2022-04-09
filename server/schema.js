@@ -26,8 +26,8 @@ const typeDefs = gql`
 
   input LineInput {
     id: Int
-    name_en: String!
-    operator_id: Int!
+    name_en: String
+    operator_id: Int
   }
 
   type Mutation {
@@ -35,8 +35,8 @@ const typeDefs = gql`
     updateOperator(name_en: String! edit: OperatorInput): String
     deleteOperator(name_en: String): String
     createLine(input: LineInput): String
-    updateLine(name: String! edit: LineInput): String
-    deleteLine(name: String): String
+    updateLine(name_en: String! edit: LineInput): String
+    deleteLine(name_en: String): String
   }
 `
 module.exports= typeDefs

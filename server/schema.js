@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Mutation {
     createOperator(input: OperatorInput): String
     updateOperator(name_en: String! edit: OperatorInput): String
-    deleteOperator(name: String): String
+    deleteOperator(name_en: String): String
     createLine(input: LineInput): String
     updateLine(name: String! edit: LineInput): String
     deleteLine(name: String): String

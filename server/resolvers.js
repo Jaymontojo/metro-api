@@ -1,4 +1,3 @@
-const { updateOperator } = require('../models/OperatorModel');
 const Operator = require('../models/OperatorModel');
 
 module.exports = {
@@ -36,23 +35,16 @@ module.exports = {
   },
 
   Mutation: {
-    createOperator: async(parent, args) =>{
+    createOperator: (parent, args) =>{
       return Operator.createOperator(args.input);
     },
 
-    updateOperator: async(parent, args) =>{
+    updateOperator: (parent, args) =>{
       return Operator.updateOperator(args.name_en, args.edit);
     },
 
-    deleteOperator: async(parent, args) =>{
-      try{
-        await db('operators')
-          .where('name_en', args.name)
-          .del();
-          return 'Successfully Deleted!'
-      } catch(err) {
-        return err
-      };
+    deleteOperator: (parent, args) =>{
+      return Operator.deleteOperator(args.name_en);
     },
 
     createLine: async(parent, args) =>{

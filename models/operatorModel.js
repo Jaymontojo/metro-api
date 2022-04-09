@@ -36,7 +36,7 @@ class OperatorModel {
     };
   };
 
-  async updateOperator(operatorNameEN, edit) {
+  async updateOperator(operatorNameEN, edit ) {
     try{
       await this.db('operators')
         .where("name_en", operatorNameEN)
@@ -47,8 +47,15 @@ class OperatorModel {
     };
   };
 
-  async deleteOperator() {
-
+  async deleteOperator(operatorNameEN) {
+    try{
+      await this.db('operators')
+        .where('name_en', operatorNameEN)
+        .del();
+        return 'Successfully Deleted!'
+    } catch(err) {
+      return err
+    };
   }
 }
 

@@ -7,15 +7,6 @@ module.exports = {
     },
 
     Operator: (parent, args) => {
-      // try{
-      //   const operators = await db('operators')
-      //     .select('*')
-      //     .where('name_en', args.name)
-      //     .timeout(1500);
-      //   return operators[0];
-      // } catch(err) {
-      //   return err
-      // };
       return Operator.getOperator(args.name_en);
     },
 
@@ -45,14 +36,7 @@ module.exports = {
 
   Mutation: {
     createOperator: async(parent, args) =>{
-      try {
-        await db('operators')
-          .insert(args.input)
-          .timeout(1500);
-        return "Successfully Created!";
-      } catch(err){
-        return err;
-      };
+      return Operator.createOperator(args.input);
     },
 
     updateOperator: async(parent, args) =>{

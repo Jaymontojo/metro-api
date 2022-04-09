@@ -25,8 +25,15 @@ class OperatorModel {
     };
   };
 
-  createOperator() {
-
+  async createOperator(input) {
+    try {
+      await this.db('operators')
+        .insert(input)
+        .timeout(1500);
+      return "Successfully Created!";
+    } catch(err){
+      return err;
+    };
   };
 
   updateOperator() {

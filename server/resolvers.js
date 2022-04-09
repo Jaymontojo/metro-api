@@ -1,16 +1,9 @@
-const db = require("../db/knex");
+const Operator = require('../models/operatorModel');
 
 module.exports = {
   Query: {
-    Operators: async (parent, args) => {
-      try{
-        const operators = await db('operators')
-          .select('*')
-          .timeout(1500);
-        return operators;
-      } catch(err) {
-        return err
-      };
+    Operators: (parent, args) => {
+      return Operator.getOperators();
     },
 
     Operator: async (parent, args) => {

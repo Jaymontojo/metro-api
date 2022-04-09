@@ -2,24 +2,24 @@ const db = require("../db/knex");
 
 module.exports = {
   Query: {
-    Companies: async (parent, args) => {
+    Operators: async (parent, args) => {
       try{
-        const companies = await db('companies')
+        const operators = await db('operators')
           .select('*')
           .timeout(1500);
-        return companies;
+        return operators;
       } catch(err) {
         return err
       };
     },
 
-    Company: async (parent, args) => {
+    Operator: async (parent, args) => {
       try{
-        const companies = await db('companies')
+        const operators = await db('operators')
           .select('*')
           .where('name_en', args.name)
           .timeout(1500);
-        return companies[0];
+        return operators[0];
       } catch(err) {
         return err
       };
@@ -50,9 +50,9 @@ module.exports = {
   },
 
   Mutation: {
-    createCompany: async(parent, args) =>{
+    createOperator: async(parent, args) =>{
       try {
-        await db('companies')
+        await db('operators')
           .insert(args.input)
           .timeout(1500);
         return "Successfully Created!";
@@ -61,9 +61,9 @@ module.exports = {
       };
     },
 
-    updateCompany: async(parent, args) =>{
+    updateOperator: async(parent, args) =>{
       try{
-        await db('companies')
+        await db('operators')
           .where("name_en", args.name)
           .update("name_en", args.edit.name_en)
         return 'Successfully Updated!'
@@ -72,9 +72,9 @@ module.exports = {
       };
     },
 
-    deleteCompany: async(parent, args) =>{
+    deleteOperator: async(parent, args) =>{
       try{
-        await db('companies')
+        await db('operators')
           .where('name_en', args.name)
           .del();
           return 'Successfully Deleted!'

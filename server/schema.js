@@ -1,7 +1,7 @@
 const { gql } = require("apollo-server");
 
 const typeDefs = gql`
-  type Company {
+  type Operator {
     id: Int
     name_en: String!
   }
@@ -13,13 +13,13 @@ const typeDefs = gql`
   }
 
   type Query {
-    Companies: [Company]
-    Company(name: String): Company
+    Operators: [Operator]
+    Operator(name: String): Operator
     Lines: [Line]
     Line(name: String): Line
   }
 
-  input CompanyInput {
+  input OperatorInput {
     id: Int
     name_en: String!
   }
@@ -31,9 +31,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createCompany(input: CompanyInput): String
-    updateCompany(name: String! edit: CompanyInput): String
-    deleteCompany(name: String): String
+    createOperator(input: OperatorInput): String
+    updateOperator(name: String! edit: OperatorInput): String
+    deleteOperator(name: String): String
     createLine(input: LineInput): String
     updateLine(name: String! edit: LineInput): String
     deleteLine(name: String): String

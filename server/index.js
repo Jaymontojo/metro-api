@@ -1,5 +1,4 @@
 const { ApolloServer} = require("apollo-server");
-const config = require('../knexfile')
 const db = require("../db/knex");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");

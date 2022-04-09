@@ -1,7 +1,7 @@
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex('companies').del()
-  await knex('companies').insert([
+  await knex('operators').del()
+  await knex('operators').insert([
     {name_en: 'East Japan Railway Company'},
     {name_en: 'Tokyo Metro Co., Ltd'},
     {name_en: 'Odakyu Electric Railway Co., Ltd'},

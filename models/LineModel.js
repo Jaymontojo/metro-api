@@ -17,8 +17,15 @@ class LineModel {
 
   };
   
-  async createLine(){
-
+  async createLine(input){
+    try {
+      await this.db('lines')
+        .insert(input)
+        .timeout(1500);
+      return "Successfully Created!";
+    } catch(err){
+      return err;
+    };
   };
 
   async updateLine(){

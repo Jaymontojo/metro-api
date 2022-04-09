@@ -11,7 +11,7 @@ module.exports = {
       return Operator.getOperator(args.name_en);
     },
 
-    Lines: async (parent, args) => {
+    Lines: (parent, args) => {
       return Line.getLines();
     },
 
@@ -41,15 +41,8 @@ module.exports = {
       return Operator.deleteOperator(args.name_en);
     },
 
-    createLine: async(parent, args) =>{
-      try {
-        await db('lines')
-          .insert(args.input)
-          .timeout(1500);
-        return "Successfully Created!";
-      } catch(err){
-        return err;
-      };
+    createLine: (parent, args) =>{
+      return Line.createLine(args.input);
     },
 
     updateLine: async(parent, args) =>{

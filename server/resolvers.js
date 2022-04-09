@@ -37,8 +37,12 @@ module.exports = {
       return Line.createLine(args.input);
     },
 
-    updateLine: async(parent, args) =>{
+    updateLine: (parent, args) =>{
       return Line.updateLine(args.name_en, args.edit);
     },
+
+    deleteLine: (parent, args) => {
+      return Line.deleteLine(args.name_en);
+    }
   },
 };

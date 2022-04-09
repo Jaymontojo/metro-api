@@ -47,8 +47,15 @@ class LineModel {
     };
   };
 
-  async deleteLine(){
-
+  async deleteLine(lineNameEN){
+    try{
+      await this.db('lines')
+        .where('name_en', lineNameEN)
+        .del();
+        return 'Successfully Deleted!'
+    } catch(err) {
+      return err
+    };
   };
 };
 

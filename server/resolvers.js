@@ -1,4 +1,5 @@
 const Operator = require('../models/OperatorModel');
+const Line = require('../models/LineModel');
 
 module.exports = {
   Query: {
@@ -11,14 +12,7 @@ module.exports = {
     },
 
     Lines: async (parent, args) => {
-      try{
-        const lines = await db('lines')
-          .select('*')
-          .timeout(1500);
-        return lines;
-      } catch(err) {
-        return err
-      };
+      return Line.getLines();
     },
 
     Line: async (parent, args) => {

@@ -1,7 +1,7 @@
-const { ApolloServer} = require("apollo-server");
-const db = require("../db/knex");
-const typeDefs = require("./schema");
-const resolvers = require("./resolvers");
+const { ApolloServer} = require('apollo-server');
+const db = require('../db/knex');
+const typeDefs = require('./schema');
+const resolvers = require('./resolvers');
 const PORT = process.env.PORT || 3000;
 const server = new ApolloServer({typeDefs, resolvers});
 

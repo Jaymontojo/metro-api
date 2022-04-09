@@ -1,4 +1,4 @@
-const Operator = require('../models/operatorModel');
+const Operator = require('../models/OperatorModel');
 
 module.exports = {
   Query: {
@@ -6,16 +6,17 @@ module.exports = {
       return Operator.getOperators();
     },
 
-    Operator: async (parent, args) => {
-      try{
-        const operators = await db('operators')
-          .select('*')
-          .where('name_en', args.name)
-          .timeout(1500);
-        return operators[0];
-      } catch(err) {
-        return err
-      };
+    Operator: (parent, args) => {
+      // try{
+      //   const operators = await db('operators')
+      //     .select('*')
+      //     .where('name_en', args.name)
+      //     .timeout(1500);
+      //   return operators[0];
+      // } catch(err) {
+      //   return err
+      // };
+      return Operator.getOperator(args.name_en);
     },
 
     Lines: async (parent, args) => {

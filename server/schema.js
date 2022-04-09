@@ -14,7 +14,7 @@ const typeDefs = gql`
 
   type Query {
     Operators: [Operator]
-    Operator(name: String): Operator
+    Operator(name_en: String): Operator
     Lines: [Line]
     Line(name: String): Line
   }
@@ -32,7 +32,7 @@ const typeDefs = gql`
 
   type Mutation {
     createOperator(input: OperatorInput): String
-    updateOperator(name: String! edit: OperatorInput): String
+    updateOperator(name_: String! edit: OperatorInput): String
     deleteOperator(name: String): String
     createLine(input: LineInput): String
     updateLine(name: String! edit: LineInput): String

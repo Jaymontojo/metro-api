@@ -13,8 +13,16 @@ class OperatorModel {
     };
   };
 
-  getOperator() {
-
+  async getOperator(operatorNameEN) {
+    try{
+      const operators = await this.db('operators')
+        .select('*')
+        .where('name_en', operatorNameEN)
+        .timeout(1500);
+      return operators[0];
+    } catch(err) {
+      return err
+    };
   };
 
   createOperator() {

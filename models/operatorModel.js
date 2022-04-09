@@ -36,11 +36,18 @@ class OperatorModel {
     };
   };
 
-  updateOperator() {
-
+  async updateOperator(operatorNameEN, edit) {
+    try{
+      await this.db('operators')
+        .where("name_en", operatorNameEN)
+        .update("name_en", edit.name_en)
+      return 'Successfully Updated!'
+    } catch(err) {
+      return err
+    };
   };
 
-  deleteOperator() {
+  async deleteOperator() {
 
   }
 }

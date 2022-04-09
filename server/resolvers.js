@@ -1,3 +1,4 @@
+const { updateOperator } = require('../models/OperatorModel');
 const Operator = require('../models/OperatorModel');
 
 module.exports = {
@@ -40,14 +41,7 @@ module.exports = {
     },
 
     updateOperator: async(parent, args) =>{
-      try{
-        await db('operators')
-          .where("name_en", args.name)
-          .update("name_en", args.edit.name_en)
-        return 'Successfully Updated!'
-      } catch(err) {
-        return err
-      };
+      return Operator.updateOperator(args.name_en, args.edit);
     },
 
     deleteOperator: async(parent, args) =>{

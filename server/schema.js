@@ -16,7 +16,7 @@ const typeDefs = gql`
     Operators: [Operator]
     Operator(name_en: String): Operator
     Lines: [Line]
-    Line(name: String): Line
+    Line(name_en: String): Line
   }
 
   input OperatorInput {

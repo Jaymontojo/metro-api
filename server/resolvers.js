@@ -15,16 +15,8 @@ module.exports = {
       return Line.getLines();
     },
 
-    Line: async (parent, args) => {
-      try{
-        const lines = await db('lines')
-          .select('*')
-          .where('name_en', args.name)
-          .timeout(1500);
-        return lines[0];
-      } catch(err) {
-        return err
-      };
+    Line: (parent, args) => {
+      return Line.getLine(args.name_en);
     },
   },
 

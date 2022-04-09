@@ -13,8 +13,16 @@ class LineModel {
     };
   };
 
-  async getLine(){
-
+  async getLine(operatorNameEN){
+    try{
+      const lines = await this.db('lines')
+        .select('*')
+        .where('name_en', operatorNameEN)
+        .timeout(1500);
+      return lines[0];
+    } catch(err) {
+      return err
+    };
   };
   
   async createLine(input){

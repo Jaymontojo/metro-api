@@ -16,7 +16,7 @@ module.exports = {
   inputs:`
     input LineInput {
       id: Int
-      name_en: String!
+      name_en: String
       operator_id: Int
       num_stations: Int
     }

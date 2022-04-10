@@ -14,7 +14,7 @@ module.exports = {
   inputs:`
     input OperatorInput {
       id: Int
-      name_en: String!
+      name_en: String
     }
   `,
 

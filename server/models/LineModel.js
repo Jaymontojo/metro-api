@@ -41,7 +41,7 @@ class LineModel {
     try{
       await this.db('lines')
         .where("name_en", lineNameEN)
-        .update("name_en", edit.name_en)
+        .update(edit);
       return 'Successfully Updated!'
     } catch(err) {
       return err

@@ -8,7 +8,7 @@ module.exports = {
     searchPath: "public",
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/migrations'
+      directory: __dirname + '/db/migrations'
     },
     seeds: {
       directory: __dirname + '/db/seeds'

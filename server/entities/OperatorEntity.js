@@ -21,6 +21,6 @@ module.exports = {
   mutations:`
     createOperator(input: OperatorInput): String
     updateOperator(name_en: String! edit: OperatorInput): String
-    deleteOperator(name_en: String): String
+    deleteOperator(name_en: String!): String
   `
 }

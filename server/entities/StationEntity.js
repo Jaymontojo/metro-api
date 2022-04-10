@@ -14,13 +14,13 @@ module.exports = {
   inputs:`
     input StationInput {
       id: Int
-      name_en: String
+      name_en: String!
     }
   `,
 
   mutations:`
     createStation(input: StationInput): String
     updateStation(name_en: String! edit: StationInput): String
-    deleteStation(name_en: String): String
+    deleteStation(name_en: String!): String
   `
 }

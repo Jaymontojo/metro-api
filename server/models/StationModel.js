@@ -10,7 +10,7 @@ class StationModel {
         .timeout(1500);
       return stations;
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -22,7 +22,7 @@ class StationModel {
         .timeout(1500);
       return stations[0];
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -42,9 +42,10 @@ class StationModel {
       await this.db('stations')
         .where("name_en", stationNameEN)
         .update("name_en", edit.name_en)
-      return 'Successfully Updated!'
+        .timeout(1500);
+      return 'Successfully Updated!';
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -52,12 +53,13 @@ class StationModel {
     try{
       await this.db('stations')
         .where('name_en', stationNameEN)
-        .del();
-        return 'Successfully Deleted!'
+        .del()
+        .timeout(1500);
+        return 'Successfully Deleted!';
     } catch(err) {
-      return err
+      return err;
     };
-  }
+  };
 }
 
 module.exports = new StationModel();

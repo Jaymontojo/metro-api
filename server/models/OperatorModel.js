@@ -59,7 +59,7 @@ class OperatorModel {
     } catch(err) {
       return err;
     };
-  }
+  };
 }
 
 module.exports = new OperatorModel();

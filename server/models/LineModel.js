@@ -22,7 +22,7 @@ class LineModel {
         .timeout(1500);
       return lines[0];
     } catch(err) {
-      return err
+      return err;
     };
   };
   
@@ -41,10 +41,11 @@ class LineModel {
     try{
       await this.db('lines')
         .where("name_en", lineNameEN)
-        .update(edit);
-      return 'Successfully Updated!'
+        .update(edit)
+        .timeout(1500);
+      return 'Successfully Updated!';
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -52,10 +53,11 @@ class LineModel {
     try{
       await this.db('lines')
         .where('name_en', lineNameEN)
-        .del();
-        return 'Successfully Deleted!'
+        .del()
+        .timeout(1500);
+        return 'Successfully Deleted!';
     } catch(err) {
-      return err
+      return err;
     };
   };
 };

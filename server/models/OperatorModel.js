@@ -10,7 +10,7 @@ class OperatorModel {
         .timeout(1500);
       return operators;
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -22,7 +22,7 @@ class OperatorModel {
         .timeout(1500);
       return operators[0];
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -41,8 +41,9 @@ class OperatorModel {
     try{
       await this.db('operators')
         .where("name_en", operatorNameEN)
-        .update("name_en", edit.name_en)
-      return 'Successfully Updated!'
+        .update(edit)
+        .timeout(1500);
+      return 'Successfully Updated!';
     } catch(err) {
       return err
     };
@@ -52,10 +53,11 @@ class OperatorModel {
     try{
       await this.db('operators')
         .where('name_en', operatorNameEN)
-        .del();
-        return 'Successfully Deleted!'
+        .del()
+        .timeout(1500);
+        return 'Successfully Deleted!';
     } catch(err) {
-      return err
+      return err;
     };
   }
 }

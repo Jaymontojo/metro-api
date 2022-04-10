@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const config = {
+module.exports = {
     client: "pg",
     connection:
       process.env.DATABASE_URL ||
@@ -14,5 +14,3 @@ const config = {
       directory: __dirname + '/db/seeds'
     }
 };
-
-module.exports = config;

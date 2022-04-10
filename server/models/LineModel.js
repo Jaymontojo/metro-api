@@ -2,6 +2,7 @@ class LineModel {
   constructor(){
     this.db = require('../../db/knex');
   };
+  
   async getLines(){
     try{
       const lines = await this.db('lines')

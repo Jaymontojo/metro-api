@@ -1,34 +1,34 @@
-class OperatorModel {
+class WardModel {
   constructor() {
     this.db = require('../../db/knex');
   };
   
-  async getOperators() {
+  async getWards() {
     try{
-      const operators = await this.db('operators')
+      const wards = await this.db('wards')
         .select('*')
         .timeout(1500);
-      return operators;
+      return wards;
     } catch(err) {
       return err
     };
   };
 
-  async getOperator(operatorNameEN) {
+  async getWard(wardNameEN) {
     try{
-      const operators = await this.db('operators')
+      const wards = await this.db('wards')
         .select('*')
-        .where('name_en', operatorNameEN)
+        .where('name_en', wardNameEN)
         .timeout(1500);
-      return operators[0];
+      return wards[0];
     } catch(err) {
       return err
     };
   };
 
-  async createOperator(input) {
+  async createWard(input) {
     try {
-      await this.db('operators')
+      await this.db('wards')
         .insert(input)
         .timeout(1500);
       return "Successfully Created!";
@@ -37,10 +37,10 @@ class OperatorModel {
     };
   };
 
-  async updateOperator(operatorNameEN, edit ) {
+  async updateWard(wardNameEN, edit ) {
     try{
-      await this.db('operators')
-        .where("name_en", operatorNameEN)
+      await this.db('wards')
+        .where("name_en", wardNameEN)
         .update("name_en", edit.name_en)
       return 'Successfully Updated!'
     } catch(err) {
@@ -48,10 +48,10 @@ class OperatorModel {
     };
   };
 
-  async deleteOperator(operatorNameEN) {
+  async deleteWard(wardNameEN) {
     try{
-      await this.db('operators')
-        .where('name_en', operatorNameEN)
+      await this.db('wards')
+        .where('name_en', wardNameEN)
         .del();
         return 'Successfully Deleted!'
     } catch(err) {
@@ -60,4 +60,4 @@ class OperatorModel {
   }
 }
 
-module.exports = new OperatorModel();
+module.exports = new WardModel();

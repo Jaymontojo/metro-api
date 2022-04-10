@@ -1,5 +1,3 @@
-const {gql} = require('apollo-server');
-
 module.exports = {
   types:`
     type Line {

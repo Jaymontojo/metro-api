@@ -1,13 +1,14 @@
 const { gql } = require('apollo-server');
 const Operator = require('./OperatorEntity');
 const Line = require('./LineEntity');
+const Ward = require('./WardEntity');
 
 const types = [];
 const Query = [];
 const input = [];
 const Mutation= [];
 
-const schemas = [Operator, Line];
+const schemas = [Operator, Line, Ward];
 
 schemas.forEach((schema) => {
   types.push(schema.types);

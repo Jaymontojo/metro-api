@@ -1,6 +1,6 @@
 {
   "name": "metro-api",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "an api for Train stations within the tokyo metropolitan 23 special wards",
   "main": "index.js",
   "scripts": {

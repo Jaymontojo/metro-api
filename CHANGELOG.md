@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/Jaymontojo/metro-api/compare/v1.3.0...v1.4.0) (2022-04-10)
+
+
+### Features
+
+* update lines table ([3ac24f7](https://github.com/Jaymontojo/metro-api/commit/3ac24f77a83d265d1554bf44d7ff1682943c0c05))
+
+
+### Bug Fixes
+
+* fix updateLine to accept partial updates ([9b52473](https://github.com/Jaymontojo/metro-api/commit/9b52473ee8456970aedaa1b1a91e9ddcb59dd91c))
+* fix updateLOperator to accept partial updates ([4342e26](https://github.com/Jaymontojo/metro-api/commit/4342e26854973a3da0d3bbb7376aaa56b3b502d4))
+* fix updateLStation to accept partial updates ([db99619](https://github.com/Jaymontojo/metro-api/commit/db99619e9d4c45e50bb3de4f8042e24119e11ed6))
+* fix updateLWard to accept partial updates ([c387d4e](https://github.com/Jaymontojo/metro-api/commit/c387d4e7a1260c9eded1fd81da4d06aa88c27e2b))
+
 ## [1.3.0](https://github.com/Jaymontojo/metro-api/compare/v1.2.0...v1.3.0) (2022-04-10)
 
 

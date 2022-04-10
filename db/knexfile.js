@@ -8,7 +8,7 @@ const config = {
     searchPath: "public",
     migrations: {
       tableName: 'knex_migrations',
-      directory: __dirname + '/db/migrations'
+      directory: __dirname + '/migrations'
     },
     seeds: {
       directory: __dirname + '/db/seeds'

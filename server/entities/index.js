@@ -16,7 +16,7 @@ schemas.forEach((schema) => {
   Query.push(schema.queries);
   input.push(schema.inputs);
   Mutation.push(schema.mutations);
-})
+});
 
 module.exports = gql`
   ${types.join("\n")}
@@ -27,4 +27,4 @@ module.exports = gql`
   type Mutation {
     ${Mutation.join("\n")}
   }
-`
+`;

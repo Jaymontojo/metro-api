@@ -10,7 +10,7 @@ class WardModel {
         .timeout(1500);
       return wards;
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -22,7 +22,7 @@ class WardModel {
         .timeout(1500);
       return wards[0];
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -41,10 +41,11 @@ class WardModel {
     try{
       await this.db('wards')
         .where("name_en", wardNameEN)
-        .update("name_en", edit.name_en)
-      return 'Successfully Updated!'
+        .update(edit)
+        .timeout(1500)
+      return 'Successfully Updated!';
     } catch(err) {
-      return err
+      return err;
     };
   };
 
@@ -52,12 +53,13 @@ class WardModel {
     try{
       await this.db('wards')
         .where('name_en', wardNameEN)
-        .del();
-        return 'Successfully Deleted!'
+        .del()
+        .timeout(1500)
+        return 'Successfully Deleted!';
     } catch(err) {
-      return err
+      return err;
     };
-  }
-}
+  };
+};
 
 module.exports = new WardModel();

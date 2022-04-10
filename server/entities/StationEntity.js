@@ -23,4 +23,4 @@ module.exports = {
     updateStation(name_en: String! edit: StationInput): String
     deleteStation(name_en: String!): String
   `
-}
+};

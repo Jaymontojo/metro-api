@@ -27,4 +27,4 @@ module.exports = {
     updateLine(name_en: String! edit: LineInput): String
     deleteLine(name_en: String!): String
   `
-}
+};

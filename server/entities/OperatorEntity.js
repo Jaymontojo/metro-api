@@ -23,4 +23,4 @@ module.exports = {
     updateOperator(name_en: String! edit: OperatorInput): String
     deleteOperator(name_en: String!): String
   `
-}
+};

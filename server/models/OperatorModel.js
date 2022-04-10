@@ -60,6 +60,6 @@ class OperatorModel {
       return err;
     };
   };
-}
+};
 
 module.exports = new OperatorModel();

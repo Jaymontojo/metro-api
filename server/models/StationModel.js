@@ -60,6 +60,6 @@ class StationModel {
       return err;
     };
   };
-}
+};
 
 module.exports = new StationModel();

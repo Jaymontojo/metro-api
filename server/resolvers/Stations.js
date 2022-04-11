@@ -1,4 +1,4 @@
-const Station = require('../models/StationModel');
+const Station = require('../entities/Stations');
 
 module.exports = {
   Query: {

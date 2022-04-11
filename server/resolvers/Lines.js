@@ -1,4 +1,4 @@
-const Line = require('../models/LineModel');
+const Line = require('../entities/Lines');
 
 module.exports = {
   Query: {

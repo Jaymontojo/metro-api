@@ -1,4 +1,4 @@
-const Operator = require('../models/OperatorModel');
+const Operator = require('../entities/Operators');
 
 module.exports = {
   Query: {

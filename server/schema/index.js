@@ -1,8 +1,8 @@
 const { gql } = require('apollo-server');
-const Operator = require('./OperatorEntity');
-const Line = require('./LineEntity');
-const Ward = require('./WardEntity');
-const Station = require('./StationEntity');
+const Operator = require('./Operators');
+const Line = require('./Lines');
+const Ward = require('./Wards');
+const Station = require('./Stations');
 
 const types = [];
 const Query = [];

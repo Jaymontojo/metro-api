@@ -1,4 +1,4 @@
-const Ward = require('../models/WardModel');
+const Ward = require('../entities/Wards');
 
 module.exports = {
   Query: {

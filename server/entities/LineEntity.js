@@ -10,7 +10,7 @@ module.exports = {
 
   queries:`
     Lines: [Line]
-    Line(name_en: String): Line
+    Line(name_en: String!): Line
   `,
 
   inputs:`

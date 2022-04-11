@@ -12,7 +12,6 @@ const server = new ApolloServer({ typeDefs, resolvers });
     server.listen(PORT, () => {
       console.log(`App is listening at http://localhost:${PORT}/graphql`)
     });
-
   } catch (err) {
     console.error(`App failed to start ${err}`);
     process.exit(-1);

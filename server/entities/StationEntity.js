@@ -8,7 +8,7 @@ module.exports = {
 
   queries:`
     Stations: [Station]
-    Station(name_en: String): Station
+    Station(name_en: String!): Station
   `,
 
   inputs:`

@@ -8,7 +8,7 @@ module.exports = {
 
   queries:`
     Wards: [Ward]
-    Ward(name_en: String): Ward
+    Ward(name_en: String!): Ward
   `,
 
   inputs:`

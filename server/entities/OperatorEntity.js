@@ -8,7 +8,7 @@ module.exports = {
 
   queries:`
     Operators: [Operator]
-    Operator(name_en: String): Operator
+    Operator(name_en: String!): Operator
   `,
 
   inputs:`

@@ -1,6 +1,6 @@
 exports.seed = async function(knex) {
-  await knex('table_name').del()
-  await knex('table_name').insert([
+  await knex('wards').del();
+  await knex('wards').insert([
     {name_en: 'Chiyoda Ward'},
     {name_en: 'Chuo Ward'},
     {name_en: 'Minato Ward'},

@@ -16,7 +16,8 @@ exports.up = async function(knex) {
         .references('id')
         .inTable('lines')
         .onDelete('cascade');
-    })
+    }
+  );
 };
 
 exports.down = async function(knex) {

@@ -3,7 +3,7 @@ exports.up = async function(knex) {
     .alterTable('lines', (table) => {
       table.integer('num_stations')
         .unsigned();
-  });
+    });
 };
 
 exports.down = async function(knex) {

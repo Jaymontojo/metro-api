@@ -43,3 +43,16 @@ npm i
 - `standard-version` -Manages the `changelog.md` file.
 
 ---
+
+# Documentation
+
+---
+
+## **Table of Contents**
+
+- **Sending a request**
+- **Database Schema**
+- **Type Definitions**
+- **Resolvers**
+
+---

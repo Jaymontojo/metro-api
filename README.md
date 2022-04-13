@@ -23,3 +23,23 @@ DB_USER=->your username here<-
 DB_PASS=->your password here<-
 DB_URL_LOCAL=*yourpassword*://*yourusername*@127.0.0.1:5432/metro_api
 ```
+
+**Install dependencies**
+
+```jsx
+npm i 
+```
+
+**Dependencies**
+
+- `apollo-server` - Initializes and runs the graphql server.
+- `knex` -Database abstraction library to query from PSQL database.
+- `pg` - Used by knex via the `knexfile.js` config file to connect to PSQL database.
+
+**Dev Dependencies**
+
+- `dotenv` -Loads environment variables from the .env file for use in the application.
+- `nodemon` -Listens for file changes and restarts the application.
+- `standard-version` -Manages the `changelog.md` file.
+
+---
